@@ -1,0 +1,6 @@
+@Mitro.API_HostAddress = http://localhost:5023
+
+GET {{Mitro.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
