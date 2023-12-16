@@ -1,4 +1,8 @@
+using Mitro.API.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.ConfigureOpenTelemetry();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,6 +33,7 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
+    app.Logger.LogInformation("Generated weather forecast");
     return forecast;
 })
 .WithName("GetWeatherForecast")
