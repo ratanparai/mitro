@@ -33,6 +33,7 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
+    app.Logger.LogInformation("Generated weather forecast");
     return forecast;
 })
 .WithName("GetWeatherForecast")

@@ -1,7 +1,6 @@
 using OpenTelemetry;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
-using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 
 namespace Mitro.API.Extensions;
@@ -38,10 +37,6 @@ internal static class OpenTelemetryExtensions
     {
         return builder.Services
             .AddOpenTelemetry()
-            .ConfigureResource(configure => 
-            {
-                configure.AddService("Mitro.API");
-            })
             .WithMetrics(metrics => 
             {
                 metrics.AddAspNetCoreInstrumentation();
