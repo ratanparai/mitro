@@ -44,6 +44,10 @@ internal static class OpenTelemetryExtensions
             })
             .WithMetrics(metrics => 
             {
+                metrics.AddAspNetCoreInstrumentation();
+                metrics.AddHttpClientInstrumentation();
+                metrics.AddRuntimeInstrumentation();
+
                 metrics.AddOtlpExporter();
             });
     }
@@ -54,6 +58,9 @@ internal static class OpenTelemetryExtensions
         return builder
             .WithTracing(tracing => 
             {
+                tracing.AddAspNetCoreInstrumentation();
+                tracing.AddHttpClientInstrumentation();
+
                 tracing.AddOtlpExporter();
             });
     }
