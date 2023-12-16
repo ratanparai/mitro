@@ -1,4 +1,4 @@
-using Mitro.API.OpenTelemetry;
+using Mitro.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
