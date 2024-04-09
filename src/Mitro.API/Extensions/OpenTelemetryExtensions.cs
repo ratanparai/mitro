@@ -32,7 +32,7 @@ internal static class OpenTelemetryExtensions
         return builder;
     }
 
-    private static OpenTelemetryBuilder AddMetrics(
+    private static IOpenTelemetryBuilder AddMetrics(
         this IHostApplicationBuilder builder)
     {
         return builder.Services
@@ -47,8 +47,8 @@ internal static class OpenTelemetryExtensions
             });
     }
 
-    private static OpenTelemetryBuilder AddTracing(
-        this OpenTelemetryBuilder builder)
+    private static IOpenTelemetryBuilder AddTracing(
+        this IOpenTelemetryBuilder builder)
     {
         return builder
             .WithTracing(tracing => 
